@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1048078265129",
+    "firebase_url": "https://kirfood-d205f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "kirfood-d205f",
+    "storage_bucket": "kirfood-d205f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048078265129:android:1853ed557696225a82a538",
+        "android_client_info": {
+          "package_name": "com.example.kirfood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTm8jUxdG1Kg6ahdGkeSu275NsbtFj6Oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
