@@ -4,10 +4,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.kirfood.Model.User;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,19 +29,69 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button morphButton, registerButton;
+    private Button morphButton, registerButton, login, register;
     private ImageButton closeLogin, closeRegister;
     private LinearLayout formLayout, formRegister;
+    private EditText userLogin, passLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        morphButton = findViewById(R.id.login);
-        registerButton = findViewById(R.id.signUp);
-        formLayout = findViewById(R.id.formLogin);
-        formRegister = findViewById(R.id.formRegister);
-        closeLogin = findViewById(R.id.closeFormLogin);
-        closeRegister = findViewById(R.id.closeFormRegister);
+        morphButton = (Button) findViewById(R.id.login);
+        registerButton = (Button) findViewById(R.id.signUp);
+        formLayout = (LinearLayout) findViewById(R.id.formLogin);
+        formRegister = (LinearLayout) findViewById(R.id.formRegister);
+        closeLogin = (ImageButton) findViewById(R.id.closeFormLogin);
+        closeRegister = (ImageButton) findViewById(R.id.closeFormRegister);
+        login = (Button) findViewById(R.id.buttonFormLogin);
+        register = (Button) findViewById(R.id.buttonFormRegister);
+        userLogin = (EditText) findViewById(R.id.usernameLogin);
+        passLogin = (EditText) findViewById(R.id.passwordLogin);
+        //init database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference table_user = FirebaseDatabase.getInstance().getReference().child("user");
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProgressDialog mDialog = new ProgressDialog(MainActivity.this);
+                mDialog.setMessage("Please Wait...");
+                mDialog.show();
+
+                table_user.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //check user
+                        if(snapshot.child(userLogin.getText().toString()).exists()){
+                            mDialog.dismiss();
+                            //get data user
+                            User user = snapshot.child(userLogin.getText().toString()).getValue(User.class);
+                            if (user.getPassword().equals(passLogin.getText().toString())){
+                                Toast.makeText(MainActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), HomeFragment.class));
+                            } else {
+                                Toast.makeText(MainActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+                            }
+                        }else {
+                            mDialog.dismiss();
+                            Toast.makeText(MainActivity.this, "User Not Found 404!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        //animasi Login, Register
         morphButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
