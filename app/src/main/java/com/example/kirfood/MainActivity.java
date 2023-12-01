@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button morphButton, registerButton, login, register;
     private ImageButton closeLogin, closeRegister;
     private LinearLayout formLayout, formRegister;
-    private EditText userLogin, passLogin;
+    private EditText userLogin, passLogin, userRegister, nameRegister, passRegister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         register = (Button) findViewById(R.id.buttonFormRegister);
         userLogin = (EditText) findViewById(R.id.usernameLogin);
         passLogin = (EditText) findViewById(R.id.passwordLogin);
+        userRegister = (EditText) findViewById(R.id.usernameRegister);
+        nameRegister = (EditText) findViewById(R.id.nameRegister);
+        passRegister = (EditText) findViewById(R.id.passwordRegister);
         //init database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference table_user = FirebaseDatabase.getInstance().getReference().child("user");
@@ -88,7 +91,33 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ProgressDialog mDialog = new ProgressDialog(MainActivity.this);
+                mDialog.setMessage("Please Wait...");
+                mDialog.show();
 
+                table_user.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.child(userRegister.getText().toString()).exists()){
+                            mDialog.dismiss();
+                            Toast.makeText(MainActivity.this, "This Username is already exist", Toast.LENGTH_SHORT).show();
+                        }else {
+                            mDialog.dismiss();
+                            User user = new User(nameRegister.getText().toString(),passRegister.getText().toString());
+                            table_user.child(userRegister.getText().toString()).setValue(user);
+                            Toast.makeText(MainActivity.this, "Register succesfully", Toast.LENGTH_SHORT).show();
+                            userRegister.getText().clear();
+                            nameRegister.getText().clear();
+                            passRegister.getText().clear();
+                            closeRegisterAnimation();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
         //animasi Login, Register
