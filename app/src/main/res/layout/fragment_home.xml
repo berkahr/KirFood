@@ -6,27 +6,39 @@
     android:background="@drawable/home_background"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shadow"
+        android:drawableLeft="@drawable/search"
+        android:hint="Search Food"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Pilihan"
+        android:id="@+id/pilihanMenu"
         android:orientation="horizontal"
         android:weightSum="4"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:layout_marginTop="130dp">
+        android:layout_marginTop="20dp">
         <LinearLayout
             android:id="@+id/pilBurger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/white"
+            android:background="@drawable/shadow"
             android:layout_marginRight="5dp">
             <ImageButton
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/burger"
+                android:background="@null"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
                 android:contentDescription="Burger"/>
@@ -43,12 +55,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/white"
+            android:background="@drawable/shadow"
             android:layout_marginRight="5dp">
             <ImageButton
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/pizza"
+                android:background="@null"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
                 android:contentDescription="Pizza"/>
@@ -65,12 +78,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/white"
+            android:background="@drawable/shadow"
             android:layout_marginRight="5dp">
             <ImageButton
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/hotdog"
+                android:background="@null"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
                 android:contentDescription="Hotdog"/>
@@ -87,11 +101,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/white">
+            android:background="@drawable/shadow">
             <ImageButton
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/drink"
+                android:background="@null"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
                 android:contentDescription="Drink"/>

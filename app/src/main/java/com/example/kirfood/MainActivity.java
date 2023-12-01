@@ -30,7 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     private Button morphButton, registerButton, login, register;
-    private ImageButton closeLogin, closeRegister;
     private LinearLayout formLayout, formRegister;
     private EditText userLogin, passLogin, userRegister, nameRegister, passRegister;
     @Override
@@ -41,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         registerButton = (Button) findViewById(R.id.signUp);
         formLayout = (LinearLayout) findViewById(R.id.formLogin);
         formRegister = (LinearLayout) findViewById(R.id.formRegister);
-        closeLogin = (ImageButton) findViewById(R.id.closeFormLogin);
-        closeRegister = (ImageButton) findViewById(R.id.closeFormRegister);
         login = (Button) findViewById(R.id.buttonFormLogin);
         register = (Button) findViewById(R.id.buttonFormRegister);
         userLogin = (EditText) findViewById(R.id.usernameLogin);
@@ -125,26 +122,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 morphAnimation();
+                closeRegisterAnimation();
             }
         });
-        closeLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeAnimation();
-            }
-        });
+//        closeLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                closeAnimation();
+//            }
+//        });
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerAnimation();
+                closeAnimation();
             }
         });
-        closeRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeRegisterAnimation();
-            }
-        });
+//        closeRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                closeRegisterAnimation();
+//            }
+//        });
         }
 
     private void closeRegisterAnimation() {
