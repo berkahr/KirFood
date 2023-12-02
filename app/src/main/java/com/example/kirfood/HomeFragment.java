@@ -1,5 +1,6 @@
 package com.example.kirfood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -9,24 +10,52 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class HomeFragment extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class HomeFragment extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu);
-    }
-    MenuFragment menuFragment = new MenuFragment();
-    FavoriteFragment favoriteFragment = new FavoriteFragment();
-    CartFragment cartFragment = new CartFragment();
-    PromoFragment promoFragment = new PromoFragment();
-    UserFragment userFragment = new UserFragment();
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        bottomNavigationView.setOnItemSelectedListener(item ->{
+            switch (item.getItemId()){
+                case R.id.menu:
+                    return true;
+                case R.id.favorit:
+                    startActivity(new Intent(getApplicationContext(),FavoriteFragment.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.cart:
+                    startActivity(new Intent(getApplicationContext(),CartFragment.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.promo:
+                    startActivity(new Intent(getApplicationContext(),PromoFragment.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.user:
+                    startActivity(new Intent(getApplicationContext(),UserFragment.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+    }
+//    HomeFragment homeFragment = new HomeFragment();
+//    MenuFragment menuFragment = new MenuFragment();
+//    CartFragment cartFragment = new CartFragment();
+//    PromoFragment promoFragment = new PromoFragment();
+//    UserFragment userFragment = new UserFragment();
+
+
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
 //        switch (item.getItemId()){
 //            case R.id.menu:
@@ -60,6 +89,6 @@ public class HomeFragment extends AppCompatActivity implements BottomNavigationV
 //                        .commit();
 //                return true;
 //        }
-        return false;
-    }
+//        return false;
+//    }
 }

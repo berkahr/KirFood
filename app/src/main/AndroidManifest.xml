@@ -23,7 +23,6 @@
         </activity>
         <activity android:name=".MainActivity" android:exported="false"/>
         <activity android:name=".HomeFragment" android:exported="false"/>
-        <activity android:name=".MenuFragment" android:exported="false"/>
         <activity android:name=".FavoriteFragment" android:exported="false"/>
         <activity android:name=".CartFragment" android:exported="false"/>
         <activity android:name=".PromoFragment" android:exported="false"/>
