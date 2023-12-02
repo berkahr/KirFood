@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu"
+        android:title="Menu"
+        android:icon="@drawable/menu"/>
+    <item
+        android:id="@+id/favorit"
+        android:title="Favorite"
+        android:icon="@drawable/favorit"/>
+    <item
+        android:id="@+id/cart"
+        android:title="Cart"
+        android:icon="@drawable/chart"/>
+    <item
+        android:id="@+id/promo"
+        android:title="Promo"
+        android:icon="@drawable/promo"/>
+    <item
+        android:id="@+id/user"
+        android:title="User"
+        android:icon="@drawable/user"/>
+
+</menu>

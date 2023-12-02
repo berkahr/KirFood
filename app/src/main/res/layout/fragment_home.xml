@@ -118,4 +118,17 @@
                 android:textColor="@color/black"/>
         </LinearLayout>
     </LinearLayout>
+
+<!--    bottom navigation-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/FragmentBottomNav"
+        android:layout_weight="9"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_gravity="bottom"
+        android:id="@+id/bottomNavigationView">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </LinearLayout>
