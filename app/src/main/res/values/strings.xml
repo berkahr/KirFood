@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">KirFood</string>
     <string name="slogan">Feast Easily, Feast Happily</string>
+    <string name="promo_home">Order any food from app and get the discount</string>
+    <string name="order">Order Now</string>
 </resources>

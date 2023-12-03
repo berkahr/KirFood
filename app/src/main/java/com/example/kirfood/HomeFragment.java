@@ -3,6 +3,8 @@ package com.example.kirfood;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +14,28 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeFragment extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
+    private TextView seeAll;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
 
+        seeAll = (TextView) findViewById(R.id.clickSeeAll);
+//        bottomNavigation
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu);
 
+//        seeAll
+        seeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),FavoriteFragment.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
+//        bottomNavigation
         bottomNavigationView.setOnItemSelectedListener(item ->{
             switch (item.getItemId()){
                 case R.id.menu:
