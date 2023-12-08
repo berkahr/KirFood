@@ -3,4 +3,6 @@
     <string name="slogan">Feast Easily, Feast Happily</string>
     <string name="promo_home">Order any food from app and get the discount</string>
     <string name="order">Order Now</string>
+    <string name="title_activity_popular_home">popularHome</string>
+    <string name="description">Kirfood is a food ordering app that allows users to order food online from kirfood own restaurants via an app on a smartphone or website. Users can browse the menu, order food, pay, and often track the status of their order until the food arrives at their designated location. This provides the convenience and ease of ordering food without having to physically go to the eatery</string>
 </resources>

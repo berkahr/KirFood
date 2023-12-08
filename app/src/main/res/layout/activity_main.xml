@@ -33,7 +33,7 @@
                 android:id="@+id/usernameLogin"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:hint="Username"/>
+                android:hint="Email"/>
             <EditText
                 android:id="@+id/passwordLogin"
                 android:layout_width="200dp"
@@ -63,7 +63,7 @@
                 android:id="@+id/usernameRegister"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:hint="Username"/>
+                android:hint="Email"/>
             <EditText
                 android:id="@+id/nameRegister"
                 android:layout_width="200dp"
