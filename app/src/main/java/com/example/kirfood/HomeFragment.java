@@ -1,9 +1,12 @@
 package com.example.kirfood;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,18 +17,52 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeFragment extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
+    ImageButton pilBurger, pilPizza, pilHotdog, pilDrink;
     private TextView seeAll;
 
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
 
+        pilBurger = (ImageButton) findViewById(R.id.buttonBurger);
+        pilPizza = (ImageButton) findViewById(R.id.buttonPizza);
+        pilHotdog = (ImageButton) findViewById(R.id.buttonHotdog);
+        pilDrink = (ImageButton) findViewById(R.id.buttonDrink);
         seeAll = (TextView) findViewById(R.id.clickSeeAll);
-//        bottomNavigation
+//bottomNavigation
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu);
 
-//        seeAll
+//pilBurger
+        pilBurger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListBurger.class));
+            }
+        });
+//pilPizza
+        pilPizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListPizza.class));
+            }
+        });
+//pilHotdog
+        pilHotdog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListHotdog.class));
+            }
+        });
+//pilDrink
+        pilDrink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListDrink.class));
+            }
+        });
+//seeAll
         seeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -33,7 +33,10 @@
                 android:id="@+id/usernameLogin"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:hint="Email"/>
+                android:hint="Email"
+                android:maxLines="1"
+                android:inputType="textMultiLine"
+                android:scrollbars="horizontal"/>
             <EditText
                 android:id="@+id/passwordLogin"
                 android:layout_width="200dp"
@@ -44,6 +47,7 @@
                 android:id="@+id/buttonFormLogin"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/logreg_button"
                 android:text="Login"
                 android:layout_gravity="center"/>
         </LinearLayout>
@@ -51,6 +55,7 @@
             android:id="@+id/login"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/logreg_button"
             android:layout_gravity="center"
             android:text="Login"/>
         <LinearLayout
@@ -63,12 +68,15 @@
                 android:id="@+id/usernameRegister"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:hint="Email"/>
+                android:hint="Email"
+                android:inputType="textMultiLine"/>
             <EditText
                 android:id="@+id/nameRegister"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:hint="Name"/>
+                android:hint="Name"
+                android:maxLines="1"
+                android:scrollbars="horizontal"/>
             <EditText
                 android:id="@+id/passwordRegister"
                 android:layout_width="200dp"
@@ -78,6 +86,7 @@
                 android:id="@+id/buttonFormRegister"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
+                android:background="@drawable/logreg_button"
                 android:text="Register"
                 android:layout_gravity="center"/>
         </LinearLayout>
@@ -85,6 +94,7 @@
             android:id="@+id/signUp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/logreg_button"
             android:layout_gravity="center"
             android:text="Register"
             android:layout_marginTop="10dp"/>
