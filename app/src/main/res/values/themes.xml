@@ -6,10 +6,7 @@
     </style>
 
     <style name="Theme.KirFood" parent="Base.Theme.KirFood" />
-    <style name="Theme.KirFood.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+    <style name="Theme.KirFood.NoActionBar" parent="Base.Theme.KirFood"/>
     <style name="Theme.KirFood.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.KirFood.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

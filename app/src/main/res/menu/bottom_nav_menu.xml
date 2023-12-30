@@ -15,7 +15,7 @@
     <item
         android:id="@+id/promo"
         android:title="Promo"
-        android:icon="@drawable/promo"/>
+        android:icon="@drawable/diskon"/>
     <item
         android:id="@+id/user"
         android:title="User"

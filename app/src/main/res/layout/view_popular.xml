@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/list_burger"
+    android:id="@+id/list_pizza"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -17,8 +17,8 @@
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_weight="2"
-            android:id="@+id/imgBurger"
-            android:src="@drawable/burger"/>
+            android:id="@+id/imgPopular"
+            android:src="@drawable/pizza"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="140dp"
@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:id="@+id/nameBurger"
+                android:id="@+id/namePopular"
                 android:layout_weight="2"
                 android:gravity="center"
                 android:text="Name"
@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:id="@+id/shortDesBurger"
+                android:id="@+id/shortDesPopular"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Description"
@@ -53,7 +53,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/priceBurger"
+                    android:id="@+id/pricepopular"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="Price"
@@ -62,7 +62,7 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/addMenuBurger"
+                    android:id="@+id/addMenuPopular"
                     android:contentDescription="add"
                     android:layout_weight="1"
                     android:src="@drawable/add_circle"
@@ -71,4 +71,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

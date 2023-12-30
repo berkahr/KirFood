@@ -7,16 +7,20 @@
     android:background="@drawable/home_background"
     android:orientation="vertical">
 <!--searchBar-->
-    <SearchView
+    <com.google.android.material.search.SearchBar
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
+        app:iconifiedByDefault="false"
+        app:searchHintIcon="@drawable/search"
+        app:queryHint="Search Food.."
         android:background="@drawable/shadow"
-        android:drawableLeft="@drawable/search"
-        android:hint="Search Food"/>
+        app:closeIcon="@drawable/close"
+        app:searchIcon="@drawable/search"
+        android:hint="search menu"/>
 
 <!--pilihan-->
     <LinearLayout
@@ -183,7 +187,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="@string/promo_home"/>
+                    android:text="@string/promo_home"
+                    android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -193,6 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/order"
+                    android:textColor="@color/black"
                     android:layout_gravity="top"
                     android:layout_marginLeft="37dp"
                     android:background="@drawable/shadow"/>
@@ -217,6 +223,7 @@
             android:textSize="18dp"
             android:textStyle="bold"
             android:gravity="left"
+            android:textColor="@color/black"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="wrap_content"
@@ -225,6 +232,7 @@
             android:text="See all >"
             android:textSize="18dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:gravity="right"
             android:alpha="0.5"
             android:layout_weight="1"/>
@@ -232,12 +240,13 @@
 
 <!--populerHome-->
 
-<!--bottom navigation-->
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/FragmentBottomNav"
+        android:layout_height="wrap_content"
+        android:id="@+id/datalist"
         android:layout_weight="9"/>
+
+<!--bottom navigation-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="75dp"

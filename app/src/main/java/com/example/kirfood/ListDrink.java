@@ -2,6 +2,11 @@ package com.example.kirfood;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,13 +22,17 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ListDrink extends Activity {
     public RecyclerView recyclerView;
     public RecyclerViewAdapterDrink recyclerViewAdapterDrink;
+    public RelativeLayout description;
+    public Animation slideUp, slideDown;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_drink);
 
-        recyclerView = (RecyclerView)findViewById(R.id.datalist);
+        recyclerView = (RecyclerView) findViewById(R.id.datalist);
+//        description = (RelativeLayout) findViewById(R.id.description);
+        slideUp = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_up);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<DataDrink> options =
@@ -33,7 +42,6 @@ public class ListDrink extends Activity {
         recyclerViewAdapterDrink = new RecyclerViewAdapterDrink(options);
         recyclerView.setAdapter(recyclerViewAdapterDrink);
     }
-
     @Override
     protected void onStart() {
         super.onStart();

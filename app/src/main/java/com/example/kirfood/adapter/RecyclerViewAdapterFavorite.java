@@ -10,39 +10,39 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.kirfood.Model.DataDrink;
-import com.example.kirfood.Model.DataPizza;
+import com.example.kirfood.Model.DataBurger;
+import com.example.kirfood.Model.DataPopular;
 import com.example.kirfood.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class RecyclerViewAdapterDrink extends FirebaseRecyclerAdapter<DataDrink, RecyclerViewAdapterDrink.MyViewHolder>{
+public class RecyclerViewAdapterFavorite extends FirebaseRecyclerAdapter<DataPopular, RecyclerViewAdapterFavorite.MyViewHolder> {
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public RecyclerViewAdapterDrink(@NonNull FirebaseRecyclerOptions<DataDrink> options) {
+    public RecyclerViewAdapterFavorite(@NonNull FirebaseRecyclerOptions<DataPopular> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull DataDrink model) {
+    protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull DataPopular model) {
         holder.name.setText(model.getName());
         holder.description.setText(model.getShortDes());
         holder.price.setText(model.getPrice());
         Glide.with(holder.img.getContext())
                 .load(model.getImg())
-                .placeholder(R.drawable.drink)
-                .error(R.drawable.drink)
+                .placeholder(R.drawable.burger)
+                .error(R.drawable.burger)
                 .into(holder.img);
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_drink,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_popular,parent,false);
         return new MyViewHolder(view);
     }
 
@@ -52,10 +52,10 @@ public class RecyclerViewAdapterDrink extends FirebaseRecyclerAdapter<DataDrink,
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            img = (ImageView) itemView.findViewById(R.id.imgDrinkMenu);
-            name = (TextView) itemView.findViewById(R.id.nameDrink);
-            description = (TextView) itemView.findViewById(R.id.shortDesDrink);
-            price = (TextView) itemView.findViewById(R.id.priceDrink);
+            img = (ImageView) itemView.findViewById(R.id.imgPopular);
+            name = (TextView) itemView.findViewById(R.id.namePopular);
+            description = (TextView) itemView.findViewById(R.id.shortDesPopular);
+            price = (TextView) itemView.findViewById(R.id.pricepopular);
         }
     }
 }

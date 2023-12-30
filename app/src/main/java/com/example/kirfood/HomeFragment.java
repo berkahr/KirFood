@@ -11,14 +11,22 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kirfood.Model.DataPopular;
+import com.example.kirfood.adapter.RecyclerViewAdapterHome;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class HomeFragment extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
     ImageButton pilBurger, pilPizza, pilHotdog, pilDrink;
     private TextView seeAll;
+    public RecyclerView recyclerView;
+    public RecyclerViewAdapterHome recyclerViewAdapterHome;
 
     @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,15 @@ public class HomeFragment extends AppCompatActivity{
 //bottomNavigation
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu);
+//recycleView
+        recyclerView = (RecyclerView)findViewById(R.id.datalist);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        FirebaseRecyclerOptions<DataPopular> options =
+                new FirebaseRecyclerOptions.Builder<DataPopular>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("favorite"), DataPopular.class)
+                        .build();
+        recyclerViewAdapterHome = new RecyclerViewAdapterHome(options);
+        recyclerView.setAdapter(recyclerViewAdapterHome);
 
 //pilBurger
         pilBurger.setOnClickListener(new View.OnClickListener() {
@@ -101,48 +118,15 @@ public class HomeFragment extends AppCompatActivity{
             return false;
         });
     }
-//    HomeFragment homeFragment = new HomeFragment();
-//    MenuFragment menuFragment = new MenuFragment();
-//    CartFragment cartFragment = new CartFragment();
-//    PromoFragment promoFragment = new PromoFragment();
-//    UserFragment userFragment = new UserFragment();
+    @Override
+    protected void onStart() {
+        super.onStart();
+        recyclerViewAdapterHome.startListening();
+    }
 
-
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-//        switch (item.getItemId()){
-//            case R.id.menu:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.FragmentBottomNav, menuFragment)
-//                        .commit();
-//                return true;
-//            case R.id.favorit:
-//                getSupportFragmentManager()
-//                            .beginTransaction()
-//                        .replace(R.id.FragmentBottomNav, favoriteFragment)
-//                        .commit();
-//                return true;
-//            case R.id.cart:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.FragmentBottomNav, cartFragment)
-//                        .commit();
-//                return true;
-//            case R.id.promo:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.FragmentBottomNav, promoFragment)
-//                        .commit();
-//                return true;
-//            case R.id.user:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.FragmentBottomNav, userFragment)
-//                        .commit();
-//                return true;
-//        }
-//        return false;
-//    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        recyclerViewAdapterHome.stopListening();
+    }
 }

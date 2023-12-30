@@ -1,93 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuDescription"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/list_drink"
-    android:gravity="center"
-    tools:context=".viewDrink">
+    android:layout_height="match_parent"
+    tools:context=".DescriptionDrink">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/menu"
-        android:background="@drawable/shadow"
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:weightSum="5"
-        tools:ignore="MissingConstraints">
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_weight="2"
-            android:id="@+id/imgDrinkMenu"
-            android:src="@drawable/drink"
-            android:scaleType="centerInside"
-            android:contentDescription="imgDrink"
-            android:longClickable="true" />
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_weight="3"
-            android:weightSum="5"
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/nameDrink"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:text="Name"
-                android:textSize="24dp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/shortDesDrink"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Description"
-                android:textSize="18dp"
-                android:textColor="@color/black"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:weightSum="4"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/priceDrink"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:text="Price"
-                    android:textSize="18dp"
-                    android:textColor="@color/black"/>
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/addMenuDrink"
-                    android:contentDescription="add"
-                    android:layout_weight="1"
-                    android:src="@drawable/add_circle"
-                    android:background="@null"/>
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="568dp"
         android:id="@+id/description"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/menu_description"
-        android:visibility="gone"
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/imgMenu"
+            android:id="@+id/imgDrinkMenu"
             android:layout_width="wrap_content"
             android:layout_height="152dp"
             android:layout_alignParentStart="true"
@@ -186,4 +114,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
