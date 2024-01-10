@@ -1,5 +1,7 @@
 package com.example.kirfood.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.kirfood.DescriptionDrink;
+import com.example.kirfood.DescriptionHotdog;
 import com.example.kirfood.Model.DataHotdog;
 import com.example.kirfood.Model.DataPizza;
 import com.example.kirfood.R;
@@ -37,6 +41,15 @@ public class RecyclerViewAdapterHotdog extends FirebaseRecyclerAdapter<DataHotdo
                 .placeholder(R.drawable.hotdog)
                 .error(R.drawable.hotdog)
                 .into(holder.img);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, DescriptionHotdog.class);
+//                intent.putExtra("HotdogId", "");
+                context.startActivity(intent);
+            }
+        });
     }
 
     @NonNull

@@ -1,5 +1,7 @@
 package com.example.kirfood.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.kirfood.DescriptionBurger;
+import com.example.kirfood.DescriptionDrink;
 import com.example.kirfood.Model.DataBurger;
 import com.example.kirfood.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -36,6 +40,15 @@ public class RecyclerViewAdapterBurger extends FirebaseRecyclerAdapter<DataBurge
                 .placeholder(R.drawable.burger)
                 .error(R.drawable.burger)
                 .into(holder.img);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, DescriptionBurger.class);
+                intent.putExtra("BurgerId", "" + position);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @NonNull

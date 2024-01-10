@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class viewDrink extends AppCompatActivity {
 
-    public ImageButton imgDrink;
+    public ImageView imgDrink;
     public RelativeLayout description;
     public Animation slideUp, slideDown;
 
@@ -26,7 +26,7 @@ public class viewDrink extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.view_drink);
         description = findViewById(id.description);
-        imgDrink = (ImageButton) findViewById(id.imgDrinkMenu);
+        imgDrink = (ImageView) findViewById(id.imgDrinkMenu);
         slideUp = AnimationUtils.loadAnimation(getApplicationContext(), anim.slide_up);
 
         imgDrink.setOnClickListener(new View.OnClickListener() {

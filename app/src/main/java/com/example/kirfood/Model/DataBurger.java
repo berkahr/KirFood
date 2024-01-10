@@ -7,17 +7,27 @@ public class DataBurger {
     private String price;
     private String promo;
     private String img;
+    private Integer price2;
 
     public DataBurger() {
     }
 
-    public DataBurger(String name, String shortDes, String longDes, String price, String promo, String img) {
+    public DataBurger(String name, String shortDes, String longDes, String price, String promo, String img, Integer price2) {
         this.name = name;
         this.shortDes = shortDes;
         this.longDes = longDes;
         this.price = price;
         this.promo = promo;
         this.img = img;
+        this.price2 = price2;
+    }
+
+    public Integer getPrice2() {
+        return price2;
+    }
+
+    public void setPrice2(Integer price2) {
+        this.price2 = price2;
     }
 
     public String getName() {

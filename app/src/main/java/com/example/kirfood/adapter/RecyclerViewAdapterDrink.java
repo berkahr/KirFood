@@ -1,5 +1,7 @@
 package com.example.kirfood.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.kirfood.DescriptionDrink;
 import com.example.kirfood.Model.DataDrink;
 import com.example.kirfood.Model.DataPizza;
 import com.example.kirfood.R;
@@ -37,6 +40,23 @@ public class RecyclerViewAdapterDrink extends FirebaseRecyclerAdapter<DataDrink,
                 .placeholder(R.drawable.drink)
                 .error(R.drawable.drink)
                 .into(holder.img);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+                Intent intent = new Intent(context, DescriptionDrink.class);
+                intent.putExtra("DrinkId", "" + position);
+                context.startActivity(intent);
+            }
+        });
+//        final DataDrink local = model;
+//        holder.img.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent foodDetails = new Intent(v.getContext(), DescriptionDrink.class);
+//                foodDetails.putExtra("name",adapter.getRef(position).getKey());
+//            }
+//        });
     }
 
     @NonNull

@@ -71,6 +71,9 @@
         <activity android:name=".ListPizza" />
         <activity android:name=".ListDrink" />
         <activity android:name=".DescriptionDrink" />
+        <activity android:name=".DescriptionBurger" />
+        <activity android:name=".DescriptionHotdog" />
+        <activity android:name=".DescriptionPizza"/>
     </application>
 
 </manifest>
