@@ -49,6 +49,20 @@ public class DescriptionDrink extends Activity {
         AddCart = (Button) findViewById(R.id.AddDesDrink);
         OrderNow = (Button) findViewById(R.id.FavoriteDesDrink);
 
+        OrderNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance().getReference("favorite");
+                String favorite = reference.push().getKey();
+                HashMap<String,String> parameter = new HashMap<>();
+                parameter.put("name","Kirby Blue");
+                parameter.put("shortDes","blue Ocean");
+                parameter.put("img","https://img.freepik.com/free-photo/blue-cocktail-with-orange_144627-18407.jpg?size=626&ext=jpg");
+                parameter.put("price","8");
+                reference.child(favorite).setValue(parameter);
+                Toast.makeText(DescriptionDrink.this,"Added To favorite",Toast.LENGTH_SHORT).show();
+            }
+        });
 //        add to cart
         AddCart.setOnClickListener(new View.OnClickListener() {
             @Override

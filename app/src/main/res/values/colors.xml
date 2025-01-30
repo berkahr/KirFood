@@ -4,6 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="teal">#008080</color>
     <color name="background">#F8C6E3</color>
-    <color name="icon">#1C5B84</color>
     <color name="button">#C0E3F7</color>
+    <color name="icon">#1C5B84</color>
+    <color name="_bg__profile_ek2_color">#FFFFFF</color>
+    <color name="kirby_elcate_color">#000000</color>
+    <color name="rectangle_20_color">#F8C6E3</color>
 </resources>

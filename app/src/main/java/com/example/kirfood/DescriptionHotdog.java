@@ -45,6 +45,20 @@ public class DescriptionHotdog extends Activity {
         AddCart = (Button) findViewById(R.id.AddDesHotdog);
         OrderNow = (Button) findViewById(R.id.FavoriteDesHotdog);
 
+        OrderNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance().getReference("favorite");
+                String favorite = reference.push().getKey();
+                HashMap<String,String> parameter = new HashMap<>();
+                parameter.put("name","Kirby Chicken");
+                parameter.put("shortDes","Chicken hotdog");
+                parameter.put("img","https://img.freepik.com/free-photo/hot-dog_144627-19564.jpg?size=626&ext=jpg");
+                parameter.put("price","3");
+                reference.child(favorite).setValue(parameter);
+                Toast.makeText(DescriptionHotdog.this,"Added To favorite",Toast.LENGTH_SHORT).show();
+            }
+        });
         //        add to cart
         AddCart.setOnClickListener(new View.OnClickListener() {
             @Override

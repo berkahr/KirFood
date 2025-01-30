@@ -74,6 +74,10 @@
         <activity android:name=".DescriptionBurger" />
         <activity android:name=".DescriptionHotdog" />
         <activity android:name=".DescriptionPizza"/>
+        <activity android:name=".ContactUs"/>
+        <activity android:name=".AboutUs"/>
+        <activity android:name=".Payment"/>
+        <activity android:name=".UserProfile"/>
     </application>
 
 </manifest>

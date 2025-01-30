@@ -3,20 +3,233 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/userFragment"
+    android:id="@+id/home"
+    android:background="@drawable/home_background"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:text="User"
-        android:textSize="40dp"
-        android:gravity="center"/>
+        android:layout_height="110dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/ellipse_3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ellipse_3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="Hi!"
+                android:gravity="left"
+                android:textColor="@color/kirby_elcate_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:text="Kirby Cute"
+                android:gravity="left"
+                android:textColor="@color/kirby_elcate_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="90dp"
+            android:text="Silver"
+            android:gravity="center"
+            android:textColor="@color/kirby_elcate_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="150dp"
+            android:text="0 Points"
+            android:gravity="center"
+            android:textColor="@color/kirby_elcate_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+    <!--pilihan-->
+    <LinearLayout
+        android:id="@+id/pilihanmenu1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/pilprofile"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/shadow2"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/profile"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:contentDescription="tes"
+                android:src="@drawable/user2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="My Profile"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pilpayment"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/shadow2"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/payment"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:contentDescription="tes"
+                android:src="@drawable/money" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Payment Methods"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pilihanmenu2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/pilabout"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/shadow2"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/information"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:contentDescription="Hotdog"
+                android:scaleType="fitCenter"
+                android:src="@drawable/information" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="About Us"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pilcontact"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/shadow2"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/contactUs"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:contentDescription="Hotdog"
+                android:scaleType="fitCenter"
+                android:src="@drawable/contact" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Contact Us"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--    bottom navigation-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/FragmentBottomNav"
-        android:layout_weight="9"/>
+        android:layout_weight="9">
+        <Button
+            android:id="@+id/LogOut"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:text="Log Out"
+            android:textSize="22dp"
+            android:background="@drawable/button"/>
+    </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="75dp"

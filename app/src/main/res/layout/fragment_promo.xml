@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="Promo"
+        android:drawableLeft="@drawable/arrow_back"
         android:textSize="30dp"
         android:paddingTop="5dp"
         android:gravity="left"

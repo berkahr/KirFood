@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class DescriptionBurger extends Activity {
     public ImageView ImgDesDrink;
     public TextView NameDesDrink, DesDrink, PriceDesDrink;
-    public Button Share, AddCart, OrderNow;
+    public Button Share, AddCart, OrderNow,favorite;
     String BurgerId="";
     FirebaseDatabase database;
     DatabaseReference burger, reference;
@@ -44,6 +44,22 @@ public class DescriptionBurger extends Activity {
         Share = (Button) findViewById(R.id.ShareDesBurger);
         AddCart = (Button) findViewById(R.id.AddDesBurger);
         OrderNow = (Button) findViewById(R.id.FavoriteDesBurger);
+        favorite = (Button) findViewById(R.id.FavoriteDesBurger);
+//        favorite
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance().getReference("favorite");
+                String favorite = reference.push().getKey();
+                HashMap<String,String> parameter = new HashMap<>();
+                parameter.put("name","Kirby Beef");
+                parameter.put("shortDes","beef burger");
+                parameter.put("img","https://img.freepik.com/free-photo/tasty-burger-isolated-white-background-fresh-hamburger-fastfood-with-beef-cheese_90220-1063.jpg?size=626&ext=jpg");
+                parameter.put("price","6");
+                reference.child(favorite).setValue(parameter);
+                Toast.makeText(DescriptionBurger.this,"Added To favorite",Toast.LENGTH_SHORT).show();
+            }
+        });
         //        add to cart
         AddCart.setOnClickListener(new View.OnClickListener() {
             @Override

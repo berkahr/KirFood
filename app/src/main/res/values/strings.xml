@@ -8,4 +8,19 @@
     <string name="description">Kirfood is a food ordering app that allows users to order food online from kirfood own restaurants via an app on a smartphone or website. Users can browse the menu, order food, pay, and often track the status of their order until the food arrives at their designated location. This provides the convenience and ease of ordering food without having to physically go to the eatery</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="MyAPi">AIzaSyBqhC_hzb4wOi-t4F_6JB4NiEtSXshhlYI</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="kirby_elcate_string">Kirby Elcate</string>
+    <string name="lo_siento_string">LoSiento</string>
+    <string name="my_profile_string">My Profile</string>
+    <string name="change_password_string">Change Password</string>
+    <string name="payment_setting_string">Payment Setting</string>
+    <string name="my_voucher_string">My Voucher</string>
+    <string name="about_us_string">About Us</string>
+    <string name="contact_us_string">Contact Us</string>
+    <string name="menu_string">Menu</string>
+    <string name="favorite_string">Favorite</string>
+    <string name="profile_ek3_string">Profile</string>
+    <string name="promo_string">Promo</string>
+    <string name="cart_string">Cart</string>
+    <string name="sign_out_string">Sign Out</string>
 </resources>

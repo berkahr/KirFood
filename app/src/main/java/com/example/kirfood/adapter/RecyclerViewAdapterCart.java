@@ -1,5 +1,6 @@
 package com.example.kirfood.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -19,6 +20,8 @@ import com.example.kirfood.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+import java.util.List;
+
 public class RecyclerViewAdapterCart extends FirebaseRecyclerAdapter<DataCart, RecyclerViewAdapterCart.MyViewHolder> {
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -29,10 +32,11 @@ public class RecyclerViewAdapterCart extends FirebaseRecyclerAdapter<DataCart, R
     public RecyclerViewAdapterCart(@NonNull FirebaseRecyclerOptions<DataCart> options) {
         super(options);
     }
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull RecyclerViewAdapterCart.MyViewHolder holder, int position, @NonNull DataCart model) {
         holder.name.setText(model.getName());
-        holder.price.setText(model.getPrice());
+        holder.price.setText("$"+model.getPrice());
 //        final DataDrink local = model;
 //        holder.img.setOnClickListener(new View.OnClickListener() {
 //            @Override

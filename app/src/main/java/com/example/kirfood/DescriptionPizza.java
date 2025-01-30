@@ -46,6 +46,21 @@ public class DescriptionPizza extends Activity {
         AddCart = (Button) findViewById(R.id.AddDesPizza);
         OrderNow = (Button) findViewById(R.id.FavoriteDesPizza);
 
+        OrderNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance().getReference("favorite");
+                String favorite = reference.push().getKey();
+                HashMap<String,String> parameter = new HashMap<>();
+                parameter.put("name","Kirby Classic");
+                parameter.put("shortDes","mushroom pizza");
+                parameter.put("img","https://img.freepik.com/free-photo/fresh-pizza-with-mushrooms-ham-cheese-white-background-copy-space-homemade-with-love-fast-delivery-recipe-menu-top-view_639032-297.jpg?size=626&ext=jpg");
+                parameter.put("price","25");
+                reference.child(favorite).setValue(parameter);
+                Toast.makeText(DescriptionPizza.this,"Added To favorite",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //        add to cart
         AddCart.setOnClickListener(new View.OnClickListener() {
             @Override

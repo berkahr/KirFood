@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aboutUS"
+    android:orientation="vertical"
+    tools:context=".AboutUs">
+
+    <TextView
+        android:id="@+id/header2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:drawableLeft="@drawable/arrow_back"
+        android:text="About Us"
+        android:textSize="30dp"
+        android:paddingTop="5dp"
+        android:gravity="left"
+        android:background="@drawable/top_bar_page"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Description"
+            android:textColor="@color/kirby_elcate_color"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Kirfood is a food ordering app that allows users to order food online from kirfood's own restaurants via an app on a smartphone or website. Users can browse the menu, order food, pay, and often track the status of their order until the food arrives at their designated location. This provides the convenience and ease of ordering food without having to physically go to the eatery."
+            android:textColor="@color/kirby_elcate_color"
+            android:justificationMode="inter_word"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Info App"
+            android:textColor="@color/kirby_elcate_color"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Version"
+                android:textColor="@color/kirby_elcate_color"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12.0"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/kirby_elcate_color"
+                android:textSize="20dp"
+                android:gravity="right"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:textColor="@color/kirby_elcate_color"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="200 Downloads"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/kirby_elcate_color"
+                android:textSize="20dp"
+                android:gravity="right"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>
